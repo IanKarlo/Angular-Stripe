@@ -1,0 +1,86 @@
+.main {
+  font-family: 'Quicksand', sans-serif;
+
+  ::-webkit-scrollbar {
+    width: 5px;
+    height: 5px;
+    border-radius: 10px;
+  }
+
+  /* Track */
+  ::-webkit-scrollbar-track {
+    background: #ffffff;
+  }
+
+  /* Handle */
+  ::-webkit-scrollbar-thumb {
+    background: #888;
+    border-radius: 10px;
+  }
+
+  /* Handle on hover */
+  ::-webkit-scrollbar-thumb:hover {
+    background: #555;
+  }
+
+  box-sizing: border-box;
+  width: 100%;
+  min-height: 100%;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  // overflow-x: hidden;
+  // overflow-y: scroll;
+
+  .top-info {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+    margin-top: 20px;
+    box-sizing: border-box;
+
+    div:first-child {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+
+    .btn-container {
+      margin: 0 20px;
+      margin-right: 40px;
+
+      a {
+        text-decoration: none;
+        color: inherit;
+      }
+    }
+
+  }
+
+  .header {
+    margin-bottom: 0;
+    margin-top: 30px;
+  }
+
+  .table-wrapper {
+    overflow-x: scroll;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    width: 100%;
+    margin-top: 100px;
+    margin-bottom: 100px;
+    padding: 5px 0;
+
+    .main-table {
+      width: 900px;
+
+    }
+  }
+
+
+}
