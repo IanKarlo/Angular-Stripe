@@ -54,7 +54,7 @@ class PaymentController {
         case 'payment_intent.succeeded':
           handleSucceededPayment(event.data.object);
           break;
-        case 'payment_intent.canceled':
+        case 'payment_intent.payment_failed':
           handleCanceledPayment(event.data.object);
           break;
         default:
