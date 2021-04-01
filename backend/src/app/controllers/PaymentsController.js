@@ -15,7 +15,7 @@ class PaymentController {
         metadata: {integration_check: 'accept_a_payment'},
       });
 
-      const user_id = req.userId, payment = paymentIntent.id, 
+      const user_id = req.userId, payment = paymentIntent.id,
         client_secret = paymentIntent.client_secret, value = amount,
         status = 'Em análise';
 
@@ -27,7 +27,7 @@ class PaymentController {
         payment,
         user_id
       });
-      
+
       return res.status(200).send({clientSecret: paymentIntent.client_secret});
     } catch(err) {
       console.log(err);
@@ -49,13 +49,13 @@ class PaymentController {
   async webhook(req, res) {
     try {
       const event = req.body;
-      
+
       switch(event.type) {
         case 'payment_intent.succeeded':
           handleSucceededPayment(event.data.object);
           break;
-        case 'payment_intent.canceled':
-          handleCanceledPayment(event.data.object);
+        case 'payment_intent.payment_failed':
+          handleFailedPayment(event.data.object);
           break;
         default:
           console.log(`Unhandled event type ${event.type}`);
@@ -66,7 +66,7 @@ class PaymentController {
 
     return res.send('ok');
   }
-  
+
 }
 
 async function handleSucceededPayment(data) {
@@ -78,19 +78,19 @@ async function handleSucceededPayment(data) {
     payment.status = 'Pagamento aceito';
     user.amount += (balancetransaction.net / 100);
     await payment.save();
-    await user.save(); 
+    await user.save();
   } catch(err) {
     console.log(err);
     console.log("Error to update payment object");
   }
 }
 
-async function handleCanceledPayment(data) {
+async function handleFailedPayment(data) {
   try {
     const payment = await Payments.findOne({ where: { payment: data.id } });
 
     payment.status = 'Pagamento recusado';
-    
+
     await payment.save();
   } catch(err) {
     console.log("Error to update payment object");

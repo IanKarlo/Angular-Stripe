@@ -31,7 +31,6 @@ export class MainPageComponent implements OnInit {
 
     this.sessionService.getPayments<PaymentData>().then(r => this.dataSource = r.data.payments.map(
       item => {
-        console.log(item);
         return {
           ...item,
           value: (item.value/100).toFixed(2),

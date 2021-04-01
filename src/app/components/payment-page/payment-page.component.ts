@@ -20,7 +20,9 @@ export class PaymentPageComponent implements OnInit {
   public paymentRequestButton: any;
   public paymentRequest: any;
   public hadClientKey: boolean = false;
+  public showGoToHomePage = false;
   private clientKey: string = "";
+
 
   //values
   public amount: any;
@@ -55,7 +57,6 @@ export class PaymentPageComponent implements OnInit {
     };
 
     this.cardElement = this.elements.create("card", {style:style});
-    //this.cardElement.mount('#card-element');
     this.cardElement.mount('#card-element');
     this.cardElement.on('change', ({error}) => {
       let displayError = document.getElementById('card-errors');
@@ -90,7 +91,7 @@ export class PaymentPageComponent implements OnInit {
         }
       }
     })
-    setTimeout(r => this.router.navigate(['/home']), 3000);
+    setTimeout(r => this.showGoToHomePage = true, 5000);
   }
 
   public getSymbol():string {
@@ -100,6 +101,10 @@ export class PaymentPageComponent implements OnInit {
       case 'usd': return 'U$';
       default: return 'R$';
     }
+  }
+
+  public goHome() {
+    this.router.navigate(['/home'])
   }
 
 }

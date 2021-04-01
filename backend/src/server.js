@@ -14,6 +14,6 @@ require('./database/index');
 app.use(routes);
 
 
-app.listen(8080, async () => {
+app.listen(process.env.PORT || 8080, async () => {
   console.log("App listen on port 8080");
 })
