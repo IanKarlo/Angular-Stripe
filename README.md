@@ -1,27 +1,46 @@
-# AngularStripe
+# Application for testing stripe API using Angular in frontend and Nodejs in backend
+***
+#### *About Stripe*
+ > Stripe is a technology company that builds economic infrastructure for the internet. Businesses of every size—from new startups to public companies—use our software to accept payments and manage their businesses online. Learn more in their website:
+ [![](https://enotas.com.br/blog/wp-content/uploads/2020/08/Stripe.jpg)](https://stripe.com)
+  
+#### *About Application*
+> This application was built for learning purpouses. The ideia about it is just understand the conecpts of Stripe API and the integration of it with another REST API. This application was build with Nodejs in the backend, using express for routing system, sequelize and sqlite3 for storage of data and jwt for autenthication. The frontend was built with Angular 10 and used material design with angular material.
+  
+# Installing and running application
+***
+ - #### Angular-CLI
+   To run an Angular application, you need to had the Angular-CLI installed on your machine. With the following command you can install angular-cli on your machine:
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 10.2.0.
+        npm install -g @angular/cli 
+        or
+        yarn global add @angular/cli
+ - #### Download repository
+   You need to download/clone the repository on your machine. You can use the following git command for it:
 
-## Development server
+        git clone https://github.com/IanKarlo/Angular-Stripe.git
+ - #### Install front-end dependencies
+   To install front-end dependencies, go to repository directory in your machine and you can use the following command:
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+        npm install
+        or
+        yarn add
+ - #### Install back-end dependencies
+   To install back-end dependencies, insite the repository directory in your machine use the followings commands:
 
-## Code scaffolding
+        cd backend
+        npm install
+        or
+        yarn install
+ - #### Run front-end
+   To run frontend, in the repository directory root run the command:
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+        ng serve
+ - #### Run back-end
+   To run backend, in the repository directory root run the following commands:
 
-## Build
-
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `--prod` flag for a production build.
-
-## Running unit tests
-
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
-
-## Running end-to-end tests
-
-Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+        cd backend
+        npm start
+        or
+        yarn start
+***

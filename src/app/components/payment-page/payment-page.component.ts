@@ -78,7 +78,7 @@ export class PaymentPageComponent implements OnInit {
         this.hadClientKey = true;
         this.pay();
       })
-      .catch(r => alert("Houve um erro, tente novament mais tarde"));
+      .catch(r => alert("Houve um erro, tente novamente mais tarde"));
   }
 
   private pay() {
