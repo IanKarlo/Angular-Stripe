@@ -5,12 +5,12 @@
  [![](https://enotas.com.br/blog/wp-content/uploads/2020/08/Stripe.jpg)](https://stripe.com)
   
 #### *About Application*
-> This application was built for learning purpouses. The idea about it is just understand the conecpts of Stripe API and the integration of it with another REST API. This application was build with Nodejs in the backend, using express for routing system, sequelize and sqlite3 for storage of data and jwt for autenthication. The frontend was built with Angular 10 and used material design with angular material.
+> This application was built for learning purpouses. The idea about it is just to understand the concepts of Stripe API and the integration of it with another REST API. This application was built with Nodejs in the backend, using express for routing system, sequelize and sqlite3 for storage of data and JWT for autenthication. The frontend was built with Angular 10 and used material design with angular material.
   
 # Installing and running application
 ***
  - #### Angular-CLI
-   To run an Angular application, you need to had the Angular-CLI installed on your machine. With the following command you can install angular-cli on your machine:
+   To run an Angular application, you need to have the Angular-CLI installed on your machine. With the following command you can install angular-cli on your machine:
 
         npm install -g @angular/cli 
         or
@@ -26,18 +26,18 @@
         or
         yarn add
  - #### Install back-end dependencies
-   To install back-end dependencies, insite the repository directory in your machine use the followings commands:
+   To install back-end dependencies, inside the repository directory in your machine use the followings commands:
 
         cd backend
         npm install
         or
         yarn install
  - #### Run front-end
-   First of all you need to configure your enviroment variables. Go to enviroment.ts file inside enviroments folder inside src folder and put the correct values for it (your stripe publish key is provided in your stripe account).Then to run frontend, in the repository directory root run the command:
+   First of all you need to configure your enviroment variables. Go to enviroment.ts file inside src/enviroments folder and put the correct values for it (your stripe publish key is provided in your stripe account).Then to run the front-end, in the repository directory root run the command:
 
         ng serve
  - #### Run back-end
-   First of all you need to configure the .env file, change the name of .env.example file to .env and fill the enviromental variables with correct values (your stripe secret is provided in your stripe account). Then to run backend, in the repository directory root run the following commands:
+   First of all you need to configure the .env file, change the name of .env.example file to .env and fill the enviromental variables with correct values (your stripe secret is provided in your stripe account). Then to run back-end, in the repository directory root run the following commands:
 
         cd backend
         npm start
@@ -47,10 +47,10 @@
 # Application screens and operation
 ***
 ## How it works
-The application is a simple recharge system, that allow users recharge their balance by "paying" any amount (limited by Stripe max) in three diferents currencies, and recharge in BRL (R$). The system was build to brazilian users, so you can just change de basis of recharge in backend and change all the portuguese tests to your language of preference.
+The application is a simple recharge system, that allow users recharge their balance by "paying" any amount (limited by Stripe max amount permited) in three diferents currencies, and recharges in BRL (R$). The system was built to brazilian users, so you can just change de basis of recharge in backend and change all the portuguese tests to your language of preference.
 ### Login
 > ![](images/login.png)
-The application had a login screen and register screen, that is used to bind all the payments to the correct users in the system. The JWT authentication ensures that only system users can make the requests.
+The application has a login screen and register screen due to the authentication, that is used to bind all the payments to the correct users in the system. The JWT authentication ensures that only system users can make the requests.
   
 ### Home
 > ![](images/home.png)
@@ -58,4 +58,4 @@ In the home page, the user can see all the payments intents and their current st
 
 ### Payment
 > ![](images/payment_page.png)
-In the payment page, the user can select the amount of charge in their account (the basis recharg is in BRL currency) and the currency, and put the card data, all of this uses the Stripe test API. You can see all the card numbers in Stripe [documentation](https://stripe.com/docs).
+In the payment page, the user can select the amount of charge in their account (the basis recharge is in BRL currency) and the currency, and put the card data, all of this uses the Stripe test API. You can see all the card numbers in Stripe [documentation](https://stripe.com/docs).
