@@ -57,5 +57,5 @@ The application had a login screen and register screen, that is used to bind all
 In the home page, the user can see all the payments intents and their current status and their current balance. The update of status is based in Stripe webhooks, that is sent to and specific route of the application API (from Stripe API). You can learn more about Stripe webhooks in their [documentation](https://stripe.com/docs).
 
 ### Payment
-> ![](images/pamyent_page.png)
+> ![](images/payment_page.png)
 In the payment page, the user can select the amount of charge in their account (the basis recharg is in BRL currency) and the currency, and put the card data, all of this uses the Stripe test API. You can see all the card numbers in Stripe [documentation](https://stripe.com/docs).
